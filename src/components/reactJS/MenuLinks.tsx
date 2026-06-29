@@ -39,6 +39,11 @@ const MenuLinks: React.FC<MenuLinksProps> = ({ namepage, pathname }) => {
                 label: "Méthode"
             },
             {
+                icon: <RiToolsFill size={20} />,
+                href: "/#process",
+                label: "Process"
+            },
+            {
                 icon: <RiMailLine size={20} />,
                 href: "/#contact",
                 label: "Contact"

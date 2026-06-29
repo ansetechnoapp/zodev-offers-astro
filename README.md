@@ -1,23 +1,23 @@
 # zodev-offers-astro
 
-Landing page Astro pour `offer.zodev.live`.
+Landing page Astro pour `service.zodev.live`.
 
 Ce projet sert à présenter des offres de services claires pour Kevin Otty: landing pages, sites vitrines, applications web et mobiles, maintenance et accompagnement.
 
 ## Démarrage
 
 ```bash
-pnpm install
-pnpm dev
+bun install
+bun run dev
 ```
 
 ## Scripts utiles
 
-- `pnpm build`
-- `pnpm preview`
-- `pnpm optimize-images`
-- `pnpm generate-sitemap`
-- `pnpm seo-audit`
+- `bun run build`
+- `bun run preview`
+- `bun run optimize-images`
+- `bun run generate-sitemap`
+- `bun run seo-audit`
 
 ## Structure
 

@@ -9,9 +9,9 @@ const rootDir = path.join(__dirname, '../..');
 
 // Configuration SEO par défaut
 const defaultSeoConfig = {
-  titleTemplate: '%s | offer.zodev.live',
-  defaultTitle: 'offer.zodev.live',
-  defaultDescription: "Landing page d'offres de Kevin Otty, développeur web et mobile freelance spécialisé en React, React Native, Astro.js et technologies web modernes.",
+  titleTemplate: '%s | service.zodev.live',
+  defaultTitle: 'Kevin Otty | Offres premium web & mobile',
+  defaultDescription: "Landing page premium d'offres de Kevin Otty, développeur web et mobile freelance spécialisé en React, React Native, Astro.js et technologies web modernes.",
   defaultImage: '/assets/social-preview.jpg',
   siteUrl: canonicalSiteUrl,
   twitterHandle: '@zoddev',

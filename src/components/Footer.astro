@@ -1,299 +1,145 @@
 ---
-import Icon from "./reactJS/Icon";
-import { getLangFromCookies, getTranslations } from "../i18n/index";
-const lang = getLangFromCookies(Astro.cookies);
-const i18n = getTranslations(lang);
 const currentYear = new Date().getFullYear();
 ---
 
-<footer>
-  <div class="footer-content">
-    <div class="group">
-      <p
-        class="flex gap-3 md:gap-5 items-center justify-center md:justify-start"
-      >
-        <Icon icon="rocket-launch" size="1.2em" /> {i18n.footer.designedWith} <a
-          href="https://astro.build/">Astro</
-        >
+<footer class="premium-footer">
+  <div class="premium-footer__inner">
+    <div class="premium-footer__brand">
+      <p class="premium-footer__eyebrow">Kevin Otty</p>
+      <h2 class="premium-footer__title">Offres web & mobile premium</h2>
+      <p class="premium-footer__copy">
+        Des livrables clairs, un périmètre net et un accompagnement direct du
+        brief à la mise en ligne.
       </p>
     </div>
-    <div class="socials">
-      <a
-        href="https://github.com/ansetechnoapp"
-        class="social-link touch-target"
-        target="_blank"
 
-      >
-        <i class="fab fa-github"></i>
-      </a>
-      <a href="https://www.linkedin.com/in/anscod/" class="social-link touch-target" target="_blank">
-        <i class="fab fa-linkedin-in"></i>
-      </a>
-      <a
-        href="https://pinterest.com/anscoddesign"
-        class="social-link touch-target"
-        target="_blank"
-      >
-        <i class="fab fa-pinterest"></i>
-      </a>
-      <a
-        href="https://instagram.com/anscod.otty"
-        class="social-link touch-target"
-        target="_blank"
-      >
-        <i class="fab fa-instagram"></i>
-      </a>
+    <div class="premium-footer__links" aria-label="Liens rapides">
+      <a href="/#hero">Accueil</a>
+      <a href="/#offers">Offres</a>
+      <a href="/#method">Méthode</a>
+      <a href="/#process">Process</a>
+      <a href="/#contact">Contact</a>
     </div>
   </div>
-  <div class="description-container">
-    <p class="description">
-      {i18n.footer.description}
-    </p>
+
+  <div class="premium-footer__meta">
+    <span>Basé à Cotonou, Bénin</span>
+    <span>Réponse sous 24h</span>
+    <span>&copy; {currentYear} Kevin Otty</span>
   </div>
-  <div class="footer-links">
-    <a href="/api-docs/" class="footer-link">{i18n.footer.apiDocs}</a>
-    <a href="/docs/" class="footer-link">{i18n.footer.docsPlatform}</a>
-  </div>
-  <p class="copyright">
-    &copy; {currentYear} {i18n.footer.copyright}
-  </p>
 </footer>
+
 <style>
-  footer {
-    padding: 0.75rem;
-    margin-top: 1.5rem;
-    background: linear-gradient(
-      to bottom,
-      transparent,
-      rgba(var(--gray-999-basis), 0.1)
-    );
-    border-top: 1px solid rgba(var(--gray-999-basis), 0.1);
+  .premium-footer {
+    margin-top: 0;
+    border-top: 1px solid rgba(200, 169, 106, 0.24);
+    background:
+      linear-gradient(180deg, rgba(255, 255, 255, 0.48), rgba(255, 255, 255, 0.82)),
+      var(--gray-999);
+    padding: 1.5rem 0 1.75rem;
   }
 
-  .footer-content {
-    display: flex;
-    flex-direction: column;
+  :root.theme-dark .premium-footer {
+    background:
+      linear-gradient(180deg, rgba(15, 23, 42, 0.48), rgba(15, 23, 42, 0.9)),
+      var(--gray-999);
+  }
+
+  .premium-footer__inner {
+    display: grid;
     gap: 1rem;
-    margin-top: auto;
-    padding: 1rem 0.75rem;
-    text-align: center;
-    color: var(--text-muted-color); /* Utilise la variable globale */
-    font-size: var(--text-sm);
-    max-width: var(--container-max-width);
     margin-inline: auto;
+    max-width: var(--container-max-width);
     padding-inline: var(--container-padding);
   }
 
-  .footer-content a {
-    color: var(--text-muted-color); /* Utilise la variable globale */
-    text-decoration: 1px solid underline transparent;
-    text-underline-offset: 0.25em;
-    transition: text-decoration-color var(--theme-transition);
+  .premium-footer__brand {
+    max-width: 42rem;
   }
 
-  .footer-content a:hover,
-  .footer-content a:focus {
-    text-decoration-color: currentColor;
+  .premium-footer__eyebrow {
+    margin: 0 0 0.5rem;
+    color: #a88445;
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
   }
 
-  .group {
+  .premium-footer__title {
+    margin: 0;
+    color: var(--gray-0);
+    font-size: 1.4rem;
+    line-height: 1.1;
+  }
+
+  .premium-footer__copy {
+    margin: 0.75rem 0 0;
+    max-width: 36rem;
+    color: var(--text-muted-color);
+    font-size: 0.95rem;
+    line-height: 1.65;
+  }
+
+  .premium-footer__links {
     display: flex;
-    flex-direction: column;
-    gap: 0.5rem;
-    width: 100%;
-  }
-
-  .group p {
-    font-size: 0.9rem;
-  }
-
-  .socials {
-    display: flex;
-    justify-content: center;
-    gap: 1rem;
     flex-wrap: wrap;
-    margin-top: 0.5rem;
+    gap: 0.5rem;
   }
 
-  .social-link {
-    display: flex;
+  .premium-footer__links a {
+    display: inline-flex;
     align-items: center;
     justify-content: center;
-    font-size: 1.2rem;
-    color: var(--text-muted-color); /* Utilise la variable globale */
-    transition:
-      color 0.3s ease,
-      transform 0.3s ease;
-    padding: 0.5rem;
-    border-radius: 50%;
-    min-width: 44px;
-    min-height: 44px;
-    background-color: rgba(var(--gray-999-basis), 0.05);
-  }
-
-  .social-link:hover {
-    color: var(--accent-regular);
-    transform: translateY(-3px);
-    background-color: rgba(var(--gray-999-basis), 0.1);
-  }
-
-  :root.theme-dark .social-link:hover {
-    color: var(--accent-dark);
-  }
-
-  .description-container {
-    display: flex;
-    justify-content: center;
-    padding: 0 var(--container-padding);
-    margin: 1rem auto;
-    max-width: var(--container-max-width);
-  }
-
-  .description {
-    text-align: center;
-    max-width: 36rem;
-    font-size: 0.8rem;
-    line-height: 1.4;
-    color: var(--text-muted-color); /* Utilise la variable globale */
-  }
-
-  .footer-links {
-    text-align: center;
-    margin: 0.5rem 0;
-    padding: 0.5rem 0;
-  }
-
-  .footer-link {
-    display: inline-block;
-    padding: 0.25rem 0.75rem;
-    margin: 0 0.25rem;
-    font-size: 0.85rem;
+    border: 1px solid rgba(200, 169, 106, 0.22);
+    border-radius: 999px;
     color: var(--text-muted-color);
+    font-size: 0.85rem;
+    padding: 0.5rem 0.85rem;
     text-decoration: none;
-    border: 1px solid rgba(var(--gray-999-basis), 0.1);
-    border-radius: 4px;
-    transition: all 0.2s ease;
+    transition:
+      background-color var(--theme-transition),
+      color var(--theme-transition),
+      border-color var(--theme-transition),
+      transform 0.2s ease;
   }
 
-  .footer-link:hover {
-    background-color: rgba(var(--accent-light-basis), 0.1);
-    color: var(--accent-regular);
-    border-color: var(--accent-regular);
+  .premium-footer__links a:hover,
+  .premium-footer__links a:focus-visible {
+    background: rgba(200, 169, 106, 0.12);
+    border-color: rgba(200, 169, 106, 0.45);
+    color: var(--gray-0);
+    transform: translateY(-1px);
   }
 
-  .copyright {
-    text-align: center;
-    font-size: 0.75rem;
-    color: var(--text-muted-color); /* Utilise la variable globale */
-    padding: 0.5rem 0;
-    margin-bottom: 0.5rem;
-    border-top: 1px solid rgba(var(--gray-999-basis), 0.05);
+  .premium-footer__meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem 1.25rem;
+    justify-content: space-between;
+    margin-inline: auto;
+    max-width: var(--container-max-width);
+    padding: 1rem var(--container-padding) 0;
+    color: var(--text-muted-color);
+    font-size: 0.78rem;
   }
 
-  /* Ajustements pour mobile */
-  @media (max-width: 640px) {
-    footer {
-      padding: 1rem 0 0.5rem;
-      margin-top: 1rem;
-    }
-
-    .footer-content {
-      padding: 1rem var(--container-padding);
-      gap: 1.5rem;
-    }
-
-    .description-container {
-      padding: 0 var(--container-padding);
-    }
+  .premium-footer__meta span {
+    white-space: nowrap;
   }
 
-  /* Ajustements pour les très petits écrans */
-  @media (max-width: 380px) {
-    .description {
-      font-size: 0.75rem;
-    }
-
-    .copyright {
-      font-size: 0.7rem;
-    }
-
-    .group p {
-      font-size: 0.8rem;
-    }
-
-    .social-link {
-      font-size: 0.9rem;
-      min-width: 36px;
-      min-height: 36px;
-    }
-  }
-
-  /* Small devices (landscape phones) */
-  @media (min-width: 36em) {
-    footer {
-      padding: 1.5rem;
-    }
-
-    .footer-content {
-      padding: 1.5rem;
-      gap: 1.5rem;
-    }
-
-    .group p {
-      font-size: 1rem;
-    }
-  }
-
-  /* Medium devices (tablets) */
   @media (min-width: 48em) {
-    footer {
-      padding: 2rem 0 1rem;
+    .premium-footer {
+      padding: 2rem 0 2rem;
     }
 
-    .footer-content {
-      flex-direction: row;
-      justify-content: space-between;
-      padding: 1rem 3rem;
-      text-align: left;
+    .premium-footer__inner {
+      grid-template-columns: minmax(0, 1fr) auto;
+      align-items: end;
     }
 
-    .group {
-      flex-direction: column;
-      gap: 1rem;
-      flex-wrap: wrap;
-      width: auto;
-    }
-
-    .socials {
-      display: flex;
-      justify-content: flex-end;
-      margin: 0;
-    }
-
-    .description-container {
-      padding: 0 3rem;
-    }
-
-    .social-link {
-      min-width: 42px;
-      min-height: 42px;
-    }
-  }
-
-  /* Large devices (desktops) */
-  @media (min-width: 62em) {
-    .footer-content {
-      padding: 1.5rem 5rem;
-    }
-
-    .description-container {
-      padding: 0 5rem;
-    }
-
-    .social-link {
-      min-width: 44px;
-      min-height: 44px;
-      font-size: 1.3rem;
+    .premium-footer__title {
+      font-size: 1.75rem;
     }
   }
 </style>

@@ -3,9 +3,9 @@ import Layout from "../layouts/Layout.astro";
 import dataUser from "../data/User.json";
 import { LandingClient } from "../components/reactJS/LandingClient";
 
-const pageTitle = `${dataUser.firstName} ${dataUser.lastName} | Offres web & mobile`;
+const pageTitle = `${dataUser.firstName} ${dataUser.lastName} | Offres premium web & mobile`;
 const pageDescription =
-  "Landing page d'offres de services de {firstName} {lastName}, développeur web et mobile basé à {city}. Découvrez des offres claires pour landing pages, sites vitrines, applications web et mobiles.";
+  "Landing page premium d'offres de services de {firstName} {lastName}, développeur web et mobile basé à {city}. Découvrez des offres claires pour landing pages, sites vitrines, applications web et mobiles.";
 const description = pageDescription
   .replace("{firstName}", dataUser.firstName)
   .replace("{lastName}", dataUser.lastName)

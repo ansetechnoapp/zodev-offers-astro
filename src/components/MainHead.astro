@@ -16,8 +16,8 @@ interface Props {
 import dataUser from "../data/User.json";
 
 const {
-  title = `${dataUser.firstName} ${dataUser.lastName} | Offres web & mobile`,
-  description = `Landing page d'offres de ${dataUser.firstName} ${dataUser.lastName} - Développeur web et mobile freelance basé à ${dataUser.address.city}. Offres claires pour landing pages, sites vitrines, applications web et mobiles.`,
+  title = `${dataUser.firstName} ${dataUser.lastName} | Offres premium web & mobile`,
+  description = `Landing page premium d'offres de ${dataUser.firstName} ${dataUser.lastName} - Développeur web et mobile freelance basé à ${dataUser.address.city}. Offres claires pour landing pages, sites vitrines, applications web et mobiles.`,
   image = "/assets/social-preview.jpg",
   canonicalURL = new URL(Astro.url.pathname, Astro.site),
   schemaType = "Person",
@@ -75,7 +75,7 @@ const socialImageURL = new URL(image, Astro.site).href;
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link
-  href="https://fonts.googleapis.com/css2?family=Public+Sans:ital,wght@0,400;0,700;1,400&family=Rubik:wght@500;600&display=swap"
+  href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap"
   rel="stylesheet"
 />
 

@@ -1,7 +1,7 @@
 # AGENTS.md
 
 ## Objectif du depot
-Ce repo contient la landing page d’offres pour `service.zodev.live` et son alias eventuel `offer.zodev.live`.
+Ce repo contient la landing page d’offres pour `service.zodev.live` et son alias eventuel `service.zodev.live`.
 Son role est de presenter des offres claires, des livrables et un perimetre simple pour un developpeur freelance unique.
 
 ## Nomenclature
