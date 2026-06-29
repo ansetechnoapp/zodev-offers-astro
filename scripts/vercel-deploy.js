@@ -129,15 +129,29 @@ async function checkBuildConfig() {
       console.log('❌ Build script should be "astro build" for Vercel deployment');
       return false;
     }
+
+    if (packageJson.engines?.node !== '20.x') {
+      console.log('❌ package.json should pin engines.node to "20.x" for Vercel deployment');
+      return false;
+    }
     
     // Check vercel.json
     const vercelPath = path.join(rootDir, 'vercel.json');
-    const vercelContent = await fs.readFile(vercelPath, 'utf-8');
-    const vercelConfig = JSON.parse(vercelContent);
-    
-    if (vercelConfig.buildCommand !== 'pnpm run build') {
-      console.log('❌ Vercel build command should be "pnpm run build"');
-      return false;
+    try {
+      const vercelContent = await fs.readFile(vercelPath, 'utf-8');
+      const vercelConfig = JSON.parse(vercelContent);
+      
+      if (vercelConfig.buildCommand !== 'pnpm run build') {
+        console.log('❌ Vercel build command should be "pnpm run build"');
+        return false;
+      }
+    } catch (error) {
+      if (error.code !== 'ENOENT') {
+        console.error('Error checking vercel.json:', error);
+        return false;
+      }
+      
+      console.log('ℹ️  No vercel.json found; relying on Vercel dashboard defaults');
     }
     
     console.log('✅ Build configuration is correct');
