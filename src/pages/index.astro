@@ -1,16 +1,11 @@
 ---
-import { getCollection } from "astro:content";
 import Layout from "../layouts/Layout.astro";
 import dataUser from "../data/User.json";
 import { LandingClient } from "../components/reactJS/LandingClient";
 
-const projects = (await getCollection("work"))
-  .sort((a, b) => b.data.number - a.data.number)
-  .slice(0, 6);
-
-const pageTitle = `${dataUser.firstName} ${dataUser.lastName} | Stack & projets`;
+const pageTitle = `${dataUser.firstName} ${dataUser.lastName} | Offres web & mobile`;
 const pageDescription =
-  "Portfolio de {firstName} {lastName}, développeur web et mobile basé à {city}. Stack principale, projets sélectionnés et accès rapide aux réalisations.";
+  "Landing page d'offres de services de {firstName} {lastName}, développeur web et mobile basé à {city}. Découvrez des offres claires pour landing pages, sites vitrines, applications web et mobiles.";
 const description = pageDescription
   .replace("{firstName}", dataUser.firstName)
   .replace("{lastName}", dataUser.lastName)
@@ -18,5 +13,5 @@ const description = pageDescription
 ---
 
 <Layout title={pageTitle} description={description} image="/assets/social-preview.jpg" type="website">
-  <LandingClient client:load projects={projects} />
+  <LandingClient client:load />
 </Layout>
